@@ -16,10 +16,10 @@ function App() {
     <div className="App">
         <Navbar/>
         <Switch>
-        <Route exact path='/login' render={(props) => <Login setUser={setUser} setJwt={setJwt} key='login'/>}/>
+        <Route exact path='/login' render={(props) => <Login key='login' setUser={setUser} setJwt={setJwt}/>}/>
         <Route exact path='/game' render={(props) => <Game key='game'/>}/>
         <Route exact path='/profile' render={(props) => <Profile key='profile'/>}/>
-        <Route exact path='/signup' render={(props) => <Signup key='signup'/>}/>
+        <Route exact path='/signup' render={(props) => <Signup key='signup' setUser={setUser} setJwt={setJwt}/>}/>
         <Route exact path='/' render={(props) => <Home key='home'/>}/>
         {/* <Route path="/questions/:questionId" exact render={(props) => <QuestionShowPage key={`questions:${props.match.params.questionId}`}/>} /> */}
         </Switch>

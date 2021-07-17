@@ -1,0 +1,13 @@
+.rotate {
+  animation: rotation 0.25s infinite ease-out;
+}
+
+@keyframes rotation {
+  0% {
+    transform: perspective(400px) rotateY(0);
+  }
+
+  100% {
+    transform: perspective(400px) rotateY(180deg);
+  }
+}

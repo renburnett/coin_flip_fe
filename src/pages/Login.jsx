@@ -23,6 +23,7 @@ const Login = ({setUser, setJwt}) => {
       history.push("/");
     } catch (error) {
       console.error("Login Error: ", error);
+      alert("Login Error: ", error)
     }
   };
 
@@ -54,7 +55,7 @@ const Login = ({setUser, setJwt}) => {
               name='email'
               icon='user' 
               iconPosition='left' 
-              placeholder=' geordi_la_forge@enterprise.sf'
+              placeholder='geordi_la_forge@enterprise.sf'
               onChange={handleLoginChange}
             />
             <Form.Group widths={16}>
@@ -63,7 +64,7 @@ const Login = ({setUser, setJwt}) => {
                 icon='lock'
                 name='password'
                 iconPosition='left'
-                placeholder='Password'
+                placeholder='p4$$w0rd'
                 type={passwordMask}
                 width={14}
                 onChange={handleLoginChange}
@@ -72,10 +73,11 @@ const Login = ({setUser, setJwt}) => {
                 type='button'
                 width={2} 
                 icon='eye'
+                toggle
+                color={!passwordMask ? 'grey' : 'vk'}
                 onClick={() => passwordMask === 'password' ? setPasswordMask(undefined) : setPasswordMask('password')}
               />
             </Form.Group>
-
             <Button
               type='submit'
               content='Login' 

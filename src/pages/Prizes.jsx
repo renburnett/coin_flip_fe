@@ -1,18 +1,17 @@
 import React from 'react';
 import { Grid, Header } from 'semantic-ui-react';
-import Coin from '../components/Coin';
 import AuthWrapper from '../util/AuthWrapper';
 
-const Game = () => {
+const Prizes = () => {
   return (
     <>
-      <Header content="Tap the coin to flip it!"/>
+      <Header content="Purchase Prizes"/>
       <Grid verticalAlign='middle' columns={5} centered>
         <Grid.Row>
           <Grid.Column/>
           <Grid.Column/>
           <Grid.Column>
-            <Coin/>
+            <Header content="prize 01"/>
           </Grid.Column>
           <Grid.Column/>
           <Grid.Column/>
@@ -22,4 +21,4 @@ const Game = () => {
   )
 }
 
-export default AuthWrapper(Game);
+export default AuthWrapper(Prizes);
