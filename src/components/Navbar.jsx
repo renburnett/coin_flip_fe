@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu } from 'semantic-ui-react';
 
 export default function Navbar() {
-  const [activeTab, setActiveTab] = useState('home')
+  const {pathname} = useLocation();  
+  const [activeTab, setActiveTab] = useState(pathname.split('/')[1])
 
   const handleItemClick = (e, { name }) => setActiveTab(name)
   
@@ -17,7 +18,7 @@ export default function Navbar() {
         <Menu pointing secondary>
           <Menu.Item
             as={Link}
-            to="/"
+            to="/home"
             name='home'
             active={activeTab === 'home'}
             onClick={handleItemClick}

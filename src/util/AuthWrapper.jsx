@@ -5,7 +5,7 @@ export default function AuthWrapper(WrappedComponent) {
   return function AuthWrapper(props) {
 
     const isAuthorized = () => {
-      return localStorage.user;
+      return (!!localStorage.user && !!localStorage.jwt);
     }
 
     return <> { isAuthorized() ? <WrappedComponent {...props} /> : <Redirect to="/login" /> } </>;
